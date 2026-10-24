@@ -22,6 +22,7 @@
           <a href="#projects">Projects</a>
           <a href="#process">Process</a>
           <a href="#contact">Contact</a>
+          <button id="adminToggle" class="admin-toggle" type="button">Admin</button>
         </nav>
       </header>
 
@@ -107,34 +108,7 @@
             <a href="#contact" class="text-link">Request full portfolio</a>
           </div>
 
-          <div class="project-grid">
-            <article class="project-card">
-              <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80" alt="Urban Housing Complex" />
-              <div class="project-info">
-                <span>Residential / 2025</span>
-                <h3>Urban Housing Complex</h3>
-                <p>A mixed-income housing prototype designed around daylight, social interaction, and climate-sensitive planning.</p>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Cultural Learning Hub" />
-              <div class="project-info">
-                <span>Institutional / 2024</span>
-                <h3>Cultural Learning Hub</h3>
-                <p>A civic space that blends public library, exhibition gallery, and community classrooms into one porous campus.</p>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Coastal Habitat Studio" />
-              <div class="project-info">
-                <span>Adaptive Reuse / 2023</span>
-                <h3>Coastal Habitat Studio</h3>
-                <p>A resilient coastal retreat exploring vernacular rhythms, natural ventilation, and low-impact material use.</p>
-              </div>
-            </article>
-          </div>
+          <div id="portfolioProjectsGrid" class="project-grid" aria-live="polite"></div>
         </section>
 
         <section id="process" class="process section-shell reveal">
@@ -203,6 +177,67 @@
           </p>
         </section>
       </main>
+
+      <div id="adminLoginModal" class="admin-modal hidden" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+        <div class="admin-modal-card">
+          <div class="admin-modal-header">
+            <h3 id="loginTitle">Admin Login</h3>
+            <button type="button" class="close-button" data-close="login">×</button>
+          </div>
+          <form id="loginForm" class="admin-form">
+            <label>
+              <span>Username</span>
+              <input type="text" id="adminUsername" name="adminUsername" placeholder="Enter username" required />
+            </label>
+            <label>
+              <span>Password</span>
+              <input type="password" id="adminPassword" name="adminPassword" placeholder="Enter password" required />
+            </label>
+            <button type="submit" class="primary-btn admin-submit">Login</button>
+          </form>
+        </div>
+      </div>
+
+      <aside id="adminPanel" class="admin-panel hidden" aria-live="polite">
+        <div class="admin-panel-header">
+          <h3>Portfolio Admin</h3>
+          <button id="logoutBtn" type="button" class="secondary-btn">Logout</button>
+        </div>
+
+        <form id="projectForm" class="admin-form">
+          <input type="hidden" id="projectId" />
+
+          <label>
+            <span>Project title</span>
+            <input type="text" id="projectTitle" placeholder="Project name" required />
+          </label>
+
+          <label>
+            <span>Category</span>
+            <input type="text" id="projectCategory" placeholder="Residential / 2025" required />
+          </label>
+
+          <label>
+            <span>Image URL</span>
+            <input type="url" id="projectImage" placeholder="https://example.com/image.jpg" required />
+          </label>
+
+          <label>
+            <span>Description</span>
+            <textarea id="projectDescription" rows="4" placeholder="Project summary" required></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="primary-btn">Save project</button>
+            <button type="button" id="resetProjectForm" class="secondary-btn">Clear</button>
+          </div>
+        </form>
+
+        <div class="admin-project-list-wrap">
+          <h4>Existing projects</h4>
+          <div id="projectList" class="project-list"></div>
+        </div>
+      </aside>
 
       <footer id="contact" class="footer section-shell reveal">
         <div class="footer-copy">
