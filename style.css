@@ -465,6 +465,20 @@ h1, h2, h3 {
 .size-2 { height: 315px; }
 .size-3 { height: 240px; }
 
+.disclaimer {
+  padding: 18px 22px;
+  margin-bottom: 28px;
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(23, 27, 30, 0.08);
+}
+
+.disclaimer p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 0.88rem;
+}
+
 .footer {
   display: flex;
   align-items: center;
