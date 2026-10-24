@@ -466,17 +466,30 @@ h1, h2, h3 {
 .size-3 { height: 240px; }
 
 .disclaimer {
-  padding: 18px 22px;
+  padding: 22px 24px;
   margin-bottom: 28px;
-  background: rgba(255,255,255,0.72);
-  border: 1px solid rgba(23, 27, 30, 0.08);
+  background: linear-gradient(135deg, rgba(23, 27, 30, 0.96), rgba(37, 45, 52, 0.94));
+  border: 1px solid rgba(214, 170, 100, 0.45);
+  box-shadow: 0 18px 32px rgba(15, 23, 42, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+
+.disclaimer::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 6px;
+  background: linear-gradient(180deg, var(--gold), #f2d7a5);
 }
 
 .disclaimer p {
   margin: 0;
-  color: var(--muted);
-  line-height: 1.75;
-  font-size: 0.88rem;
+  color: rgba(248, 250, 252, 0.9);
+  line-height: 1.8;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+  font-weight: 600;
 }
 
 .footer {
