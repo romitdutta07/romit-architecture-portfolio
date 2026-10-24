@@ -1,1 +1,0 @@
-Upload to GitHub Pages. Replace placeholders in assets folder and resume.pdf.
