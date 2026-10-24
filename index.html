@@ -1,14 +1,206 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/romit-architecture-portfolio/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>architecture-portfolio</title>
-    <script type="module" crossorigin src="/romit-architecture-portfolio/assets/index-CXXyU7V4.js"></script>
-    <link rel="stylesheet" crossorigin href="/romit-architecture-portfolio/assets/index-DOvRr2So.css">
+    <meta name="description" content="Architecture portfolio for Romit Dutta" />
+    <title>Romit Dutta | Architecture Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root"></div>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">RD</div>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero section-shell reveal">
+          <div class="hero-copy">
+            <p class="eyebrow">Architecture Student / Designer</p>
+            <h1>Designing spaces that feel human, sustainable, and timeless.</h1>
+            <p class="lead">
+              I’m Romit Dutta, an architecture student at Jadavpur University focused on
+              creating meaningful environments through thoughtful planning, material
+              sensitivity, and bold visual storytelling.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-btn" href="#projects">View Projects</a>
+              <a class="secondary-btn" href="#contact">Let’s Talk</a>
+            </div>
+            <div class="stats-row">
+              <div class="stat-box"><strong>04+</strong><span>Years of study</span></div>
+              <div class="stat-box"><strong>12</strong><span>Design studios</span></div>
+              <div class="stat-box"><strong>08</strong><span>Built projects</span></div>
+              <div class="stat-box"><strong>03</strong><span>Competition entries</span></div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="image-panel large">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" alt="Architecture exterior" />
+            </div>
+            <div class="floating-card">
+              <span class="tag">Current focus</span>
+              <h3>Sustainable urban living</h3>
+              <p>Designing climate-responsive homes with stronger community identity.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="about section-shell reveal">
+          <div class="section-heading">
+            <p class="eyebrow">About me</p>
+            <h2>Architecture shaped by context, culture, and people.</h2>
+          </div>
+          <div class="about-grid">
+            <div class="about-copy">
+              <p>
+                My work explores how architecture can respond to the emotional and environmental
+                needs of everyday life. I am interested in adaptive reuse, public space, and
+                low-carbon design strategies that bridge tradition and innovation.
+              </p>
+              <p>
+                Through studio projects and research, I aim to design spaces that are practical,
+                expressive, and rooted in the lived experience of the communities they serve.
+              </p>
+            </div>
+
+            <div class="expertise-box">
+              <h3>Areas of interest</h3>
+              <div class="chip-list">
+                <span class="chip">Architectural Design</span>
+                <span class="chip">Urban Planning</span>
+                <span class="chip">Sustainable Design</span>
+                <span class="chip">Concept Development</span>
+                <span class="chip">Spatial Visualization</span>
+                <span class="chip">Material Research</span>
+                <span class="chip">Site Analysis</span>
+                <span class="chip">3D Modelling</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="projects section-shell reveal">
+          <div class="section-heading row-heading">
+            <div>
+              <p class="eyebrow">Selected work</p>
+              <h2>Projects built around ideas, stories, and place.</h2>
+            </div>
+            <a href="#contact" class="text-link">Request full portfolio</a>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card">
+              <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80" alt="Urban Housing Complex" />
+              <div class="project-info">
+                <span>Residential / 2025</span>
+                <h3>Urban Housing Complex</h3>
+                <p>A mixed-income housing prototype designed around daylight, social interaction, and climate-sensitive planning.</p>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Cultural Learning Hub" />
+              <div class="project-info">
+                <span>Institutional / 2024</span>
+                <h3>Cultural Learning Hub</h3>
+                <p>A civic space that blends public library, exhibition gallery, and community classrooms into one porous campus.</p>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Coastal Habitat Studio" />
+              <div class="project-info">
+                <span>Adaptive Reuse / 2023</span>
+                <h3>Coastal Habitat Studio</h3>
+                <p>A resilient coastal retreat exploring vernacular rhythms, natural ventilation, and low-impact material use.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="process" class="process section-shell reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Design process</p>
+            <h2>From observation to built insight.</h2>
+          </div>
+
+          <div class="process-grid">
+            <div class="process-card">
+              <span class="step-number">01</span>
+              <h3>Research</h3>
+              <p>Context mapping, climate study, and user behavior analysis to define design intent.</p>
+            </div>
+            <div class="process-card">
+              <span class="step-number">02</span>
+              <h3>Concept</h3>
+              <p>Narrative-driven zoning, massing studies, and iterative spatial experiments.</p>
+            </div>
+            <div class="process-card">
+              <span class="step-number">03</span>
+              <h3>Development</h3>
+              <p>Detailed design, material strategy, and coordinated technical resolution.</p>
+            </div>
+            <div class="process-card">
+              <span class="step-number">04</span>
+              <h3>Presentation</h3>
+              <p>Visual storytelling through renders, plans, axonometric diagrams, and narratives.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="recognition section-shell reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Recognition</p>
+            <h2>Selected achievements and opportunities.</h2>
+          </div>
+          <div class="award-list">
+            <div class="award-item"><span class="award-mark">✦</span><p>Best Thesis Proposal — Studio 6</p></div>
+            <div class="award-item"><span class="award-mark">✦</span><p>Shortlisted — National Design Competition</p></div>
+            <div class="award-item"><span class="award-mark">✦</span><p>Featured in the Student Portfolio Review 2025</p></div>
+          </div>
+        </section>
+
+        <section class="gallery section-shell reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Visual studies</p>
+            <h2>Explorations, sketches, and spatial experiments.</h2>
+          </div>
+
+          <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=900&q=80" alt="Architecture study 1" class="gallery-item size-1" />
+            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=900&q=80" alt="Architecture study 2" class="gallery-item size-2" />
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80" alt="Architecture study 3" class="gallery-item size-3" />
+            <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=900&q=80" alt="Architecture study 4" class="gallery-item size-1" />
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Architecture study 5" class="gallery-item size-2" />
+            <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=900&q=80" alt="Architecture study 6" class="gallery-item size-3" />
+          </div>
+        </section>
+      </main>
+
+      <footer id="contact" class="footer section-shell reveal">
+        <div class="footer-copy">
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s design spaces with meaning.</h2>
+        </div>
+        <div class="contact-box">
+          <a href="mailto:hello@romitdutta.design">hello@romitdutta.design</a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://www.behance.net" target="_blank" rel="noreferrer">Behance</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
