@@ -37,6 +37,11 @@ reveals.forEach((section) => observer.observe(section));
 function getSupabaseClient() {
   const config = window.SUPABASE_CONFIG;
 
+  if (!window.supabase) {
+    console.warn('Supabase script failed to load. Check the CDN or project script order.');
+    return null;
+  }
+
   if (!config || !config.url || !config.anonKey || config.url.includes('YOUR_PROJECT_ID') || config.anonKey.includes('YOUR_SUPABASE_ANON_KEY')) {
     return null;
   }
@@ -274,18 +279,28 @@ async function bindAdminEvents() {
   if (!adminToggle || !loginForm || !projectForm || !projectList) return;
 
   adminToggle.addEventListener('click', async () => {
+    const modal = document.getElementById('adminLoginModal');
+    const panel = document.getElementById('adminPanel');
+    if (modal) {
+      modal.classList.remove('hidden');
+    }
+
     const supabase = getSupabaseClient();
     if (!supabase) {
-      alert('Configure Supabase first.');
+      alert('Supabase is not configured yet. Add your project URL and anon key in supabase-config.js.');
       return;
     }
 
     const { data } = await supabase.auth.getSession();
     if (data?.session) {
-      document.getElementById('adminPanel').classList.remove('hidden');
+      if (panel) {
+        panel.classList.remove('hidden');
+      }
       adminToggle.textContent = 'Admin On';
     } else {
-      document.getElementById('adminLoginModal').classList.remove('hidden');
+      if (modal) {
+        modal.classList.remove('hidden');
+      }
     }
   });
 
