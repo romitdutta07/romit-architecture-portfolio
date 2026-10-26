@@ -155,17 +155,32 @@ h1, h2, h3 {
   line-height: 1.85;
 }
 
-.hero-quote {
-  margin: 18px 0 0;
-  max-width: 700px;
-  padding-left: 18px;
+.hero-quote-panel {
+  position: absolute;
+  left: 24px;
+  top: 220px;
+  width: min(82%, 290px);
+  padding: 16px 16px 14px 18px;
   border-left: 2px solid rgba(169, 119, 54, 0.8);
-  color: #2d363b;
+  background: rgba(255,255,255,0.34);
+  color: #243139;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.5rem, 2vw, 2.25rem);
-  line-height: 1.2;
+  font-size: clamp(1.15rem, 1.5vw, 1.8rem);
+  line-height: 1.25;
   font-style: italic;
   letter-spacing: 0.01em;
+  z-index: 3;
+  box-shadow: 0 12px 28px rgba(17, 23, 31, 0.06);
+}
+
+.hero-quote-panel span {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9em;
+  font-style: normal;
+  letter-spacing: 0.05em;
+  text-transform: none;
+  color: var(--gold-deep);
 }
 
 .hero-meta {
