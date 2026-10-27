@@ -15,9 +15,25 @@
   </head>
   <body>
     <div class="page-shell">
+      <div id="navOverlay" class="nav-overlay" aria-hidden="true"></div>
+
       <header class="topbar">
         <div class="brand">RD</div>
-        <nav class="nav" aria-label="Main navigation">
+
+        <button
+          id="navToggle"
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="siteNav"
+          aria-label="Open navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="siteNav" class="nav" aria-label="Main navigation">
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#process">Process</a>

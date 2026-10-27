@@ -18,6 +18,7 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   font-family: 'Manrope', sans-serif;
   background:
     radial-gradient(circle at top left, rgba(214, 170, 100, 0.22), transparent 22%),
@@ -74,6 +75,51 @@ a { color: inherit; text-decoration: none; }
   gap: 28px;
   font-size: 0.9rem;
   letter-spacing: 0.04em;
+}
+
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 11, 14, 0.68);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 8;
+}
+
+.nav-toggle {
+  display: none;
+  width: 46px;
+  height: 46px;
+  padding: 10px 9px;
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.04);
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: #f7efe7;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .nav a,
@@ -793,6 +839,205 @@ h1, h2, h3 {
   opacity: 0;
   transform: translateY(22px);
   transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 40px 24px 28px;
+  }
+
+  .hero-visual {
+    min-height: 430px;
+  }
+
+  .hero-quote-panel {
+    position: relative;
+    inset: auto;
+    width: min(100%, 320px);
+    margin-top: 14px;
+  }
+
+  .stats-row,
+  .project-grid,
+  .process-grid,
+  .about-grid,
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wonders-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-box {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    width: min(100% - 18px, 1280px);
+    padding-top: 18px;
+  }
+
+  .topbar {
+    position: sticky;
+    padding: 14px 16px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .nav-toggle {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .nav-overlay {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+
+  .nav-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav {
+    display: none;
+    width: min(100%, 280px);
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    font-size: 0.8rem;
+    background: rgba(15, 19, 24, 0.97);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px;
+    padding: 12px;
+    box-shadow: 0 22px 46px rgba(15, 23, 42, 0.35);
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .nav.is-open {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .nav a,
+  .nav .admin-toggle {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 10px 12px;
+  }
+
+  .hero {
+    padding: 28px 20px 22px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 14vw, 4rem);
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .hero-meta {
+    gap: 8px;
+  }
+
+  .hero-meta span {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+
+  .stats-row,
+  .project-grid,
+  .process-grid,
+  .about-grid,
+  .gallery-grid,
+  .wonders-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .row-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about,
+  .projects,
+  .process,
+  .recognition,
+  .gallery,
+  .footer {
+    padding: 26px 20px;
+  }
+
+  .section-shell {
+    border-radius: 22px;
+  }
+
+  .hero-visual {
+    min-height: 330px;
+  }
+
+  .brand-card {
+    width: min(62%, 220px);
+    left: 10px;
+    top: 10px;
+  }
+
+  .floating-card {
+    right: 8px;
+    bottom: 10px;
+    max-width: 180px;
+    padding: 12px 14px;
+  }
+
+  .floating-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .floating-card p {
+    font-size: 0.74rem;
+  }
+
+  .admin-panel {
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
 }
 
 .reveal.visible {

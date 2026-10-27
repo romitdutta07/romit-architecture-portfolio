@@ -356,7 +356,44 @@ async function initializePortfolio() {
   await refreshProjects();
 }
 
+function bindMobileNavigation() {
+  const navToggle = document.getElementById('navToggle');
+  const nav = document.getElementById('siteNav');
+  const navOverlay = document.getElementById('navOverlay');
+
+  if (!navToggle || !nav || !navOverlay) return;
+
+  const closeMenu = () => {
+    nav.classList.remove('is-open');
+    navOverlay.classList.remove('is-visible');
+    navToggle.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open navigation menu');
+  };
+
+  navToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('is-open');
+    navOverlay.classList.toggle('is-visible', isOpen);
+    navToggle.classList.toggle('is-open', isOpen);
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+    navToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+  });
+
+  navOverlay.addEventListener('click', closeMenu);
+
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 720) {
+      closeMenu();
+    }
+  });
+}
+
 window.addEventListener('DOMContentLoaded', async () => {
   await initializePortfolio();
   bindAdminEvents();
+  bindMobileNavigation();
 });
